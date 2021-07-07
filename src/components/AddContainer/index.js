@@ -1,10 +1,10 @@
-import { users } from '../../data';
+import { store } from '../../redux/store';
+import { addUser } from '../../redux/actions';
 
 const addContainer = document.getElementById('containerForAdd');
 const addButton = addContainer.querySelector('button');
 const input = addContainer.querySelector('input');
 
 addButton.addEventListener('click', () => {
-  users.push(input.value);
-  console.log(users);
+  store.dispatch(addUser({ user: input.value }));
 })

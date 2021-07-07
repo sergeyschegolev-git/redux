@@ -1,4 +1,4 @@
-import { users } from '../../data';
+import { store } from '../../redux/store';
 
 const listContainer = document.getElementById('list');
 
@@ -9,4 +9,9 @@ const createUserView = (user) => {
   return div;
 }
 
-listContainer.append(...users.map(createUserView));
+store.subscribe(() => {
+  listContainer.innerHTML = '';
+  listContainer.append(...store.getState().users.map(createUserView));
+})
+
+listContainer.append(...store.getState().users.map(createUserView));
