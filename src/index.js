@@ -1,2 +1,3 @@
-import './redux/store';
-import './index.css';
+import './components/Counter/index'
+import '../src/redux/store';
+import './index.css'
