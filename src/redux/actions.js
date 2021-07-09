@@ -1,4 +1,16 @@
-import {DECREASE_NUM, INCREASE_NUM} from "./actionTypes";
+import {DECREASE, DECREASE_NUM, INCREASE, INCREASE_NUM} from "./actionTypes";
+
+export const increase = () => {
+    return {
+        type: INCREASE,
+    }
+}
+
+export const decrease = () => {
+    return {
+        type: DECREASE,
+    }
+}
 
 export const increaseByNum = (data) => {
     return {

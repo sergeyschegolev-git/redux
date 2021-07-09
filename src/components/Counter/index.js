@@ -1,6 +1,6 @@
 import {store} from "../../redux/store";
-import {decreaseByNum, increaseByNum} from "../../redux/actions";
-import {DECREASE, INCREASE} from "../../redux/actionTypes";
+import {increase, decrease, decreaseByNum, increaseByNum} from "../../redux/actions";
+
 
 const btnIncrease = document.getElementById("btnIncrease")
 const btnDecrease = document.getElementById("btnDecrease")
@@ -12,10 +12,10 @@ const counter = document.getElementById("counter")
 
 
 btnIncrease.addEventListener('click', () => {
-    store.dispatch({type: INCREASE})
+    store.dispatch(increase())
 })
 btnDecrease.addEventListener('click', () => {
-    store.dispatch({type: DECREASE})
+    store.dispatch(decrease())
 })
 
 btnIncreaseNum.addEventListener('click', () => {
@@ -36,7 +36,7 @@ btnDecreaseNum.addEventListener('click', () => {
 
 
 function render() {
-    counter.innerHTML = store.getState().toString()
+    counter.innerHTML = store.getState()
 }
 
 render()
