@@ -36,7 +36,7 @@ btnDecreaseNum.addEventListener('click', () => {
 
 
 function render() {
-    counter.innerHTML = store.getState()
+    counter.innerHTML = store.getState().counter
 }
 
 render()
